@@ -1,0 +1,73 @@
+{
+  "name": "sonic-surge",
+  "version": "1.0.0",
+  "description": "SonicSurge – Gaming Soundboard for Valorant & Discord",
+  "main": "electron/main.cjs",
+  "author": "SonicSurge <support@sonicsurge.app>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "concurrently -k \"npm run vite\" \"npm run electron:dev\"",
+    "vite": "vite",
+    "electron:dev": "wait-on http://localhost:5173 && cross-env NODE_ENV=development electron .",
+    "build": "vite build",
+    "icon": "node scripts/convert-icon.js",
+    "predist": "npm run icon && npm run build",
+    "dist": "cross-env CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --win --x64",
+    "dist:dir": "cross-env CSC_IDENTITY_AUTO_DISCOVERY=false electron-builder --win --x64 --dir"
+  },
+  "build": {
+    "appId": "com.sonicsurge.soundboard",
+    "productName": "SonicSurge",
+    "copyright": "Copyright © 2025 SonicSurge",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "forceCodeSigning": false,
+    "win": {
+      "icon": "resources/icon.ico",
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ],
+      "artifactName": "SonicSurge-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "SonicSurge",
+      "installerIcon": "resources/icon.ico",
+      "uninstallerIcon": "resources/icon.ico",
+      "installerHeader": "resources/installer-header.png",
+      "license": "resources/license.txt",
+      "include": "build/installer.nsh",
+      "artifactName": "SonicSurge-Setup-${version}.${ext}"
+    }
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0",
+    "react-hot-toast": "^2.4.1",
+    "zustand": "^5.0.3",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "cross-env": "^7.0.3",
+    "electron": "^35.2.1",
+    "electron-builder": "^25.1.8",
+    "png-to-ico": "^2.1.8",
+    "sharp": "^0.33.5",
+    "vite": "^6.3.5",
+    "wait-on": "^8.0.3"
+  }
+}

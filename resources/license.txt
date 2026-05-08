@@ -1,0 +1,40 @@
+SONICSURGE SOFTWARE LICENSE AGREEMENT
+======================================
+
+PLEASE READ THIS AGREEMENT CAREFULLY BEFORE INSTALLING SONICSURGE.
+
+1. ACCEPTANCE
+   By installing or using SonicSurge, you agree to the terms of this agreement.
+
+2. WHAT SONICSURGE DOES
+   SonicSurge is a standard Windows desktop soundboard application.
+   It plays audio files through your sound card and provides hotkey-based playback.
+
+3. WHAT SONICSURGE DOES NOT DO
+   - SonicSurge does NOT inject code into Valorant or any other game.
+   - SonicSurge does NOT modify any game files.
+   - SonicSurge does NOT interact with Riot Vanguard anti-cheat.
+   - SonicSurge does NOT read game memory or processes.
+   - SonicSurge does NOT bypass any anti-cheat system.
+
+4. PUSH-TO-TALK SIMULATION
+   The PTT (Push-To-Talk) sync feature simulates a standard Windows keyboard
+   key press using the Windows SendInput API — the same mechanism used by
+   accessibility software and macro keyboards. This is a normal user-level
+   keyboard event, identical to physically pressing a key.
+
+5. AUDIO ROUTING
+   Audio is routed through standard Windows audio devices only. Integration
+   with virtual audio drivers (e.g., VB-CABLE) requires those drivers to be
+   installed separately by the user.
+
+6. THIRD-PARTY TOOLS
+   yt-dlp and FFmpeg are third-party tools used for audio extraction.
+   They are subject to their own licenses.
+
+7. DISCLAIMER
+   THIS SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND.
+   THE AUTHORS ARE NOT RESPONSIBLE FOR ANY VIOLATIONS OF THIRD-PARTY
+   TERMS OF SERVICE THAT MAY RESULT FROM MISUSE OF THIS APPLICATION.
+
+Copyright (c) 2025 SonicSurge. All rights reserved.
