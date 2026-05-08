@@ -45,9 +45,7 @@
       "shortcutName": "SonicSurge",
       "installerIcon": "resources/icon.ico",
       "uninstallerIcon": "resources/icon.ico",
-      "installerHeader": "resources/installer-header.png",
       "license": "resources/license.txt",
-      "include": "build/installer.nsh",
       "artifactName": "SonicSurge-Setup-${version}.${ext}"
     }
   },
